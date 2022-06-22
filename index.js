@@ -23,6 +23,10 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("buna");
+});
+
 app.post("/predict", (req, res) => {
   if (!model) {
     res.status(500).send("Model is not loaded yet!");
